@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El TaCotorro | Late-Night Tacos on Beach Blvd • Jacksonville</title>
+<meta name="description" content="El TaCotorro, late-night tacos, birria and burritos on Beach Blvd, Jacksonville. Call (904) 554-4146.">
+<meta name="theme-color" content="#0d0d14">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero.jpg">
+<style>
+:root{--bg:#0d0d14;--bg2:#151522;--neon:#ff2e4c;--lime:#b6ff3b;--gold:#ffc861;--txt:#ecebf3;--mute:#9a98ad}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding-bottom:84px}
+.bung{font-family:"Bungee",Impact,sans-serif;font-weight:400}
+.glow{color:#fff;text-shadow:0 0 4px #fff,0 0 12px var(--neon),0 0 26px var(--neon),0 0 44px var(--neon)}
+.lights{height:14px;background:radial-gradient(circle at 10px 7px,var(--gold) 0 3px,rgba(255,200,97,.35) 4px,transparent 8px) 0 0/22px 14px repeat-x,var(--bg);animation:tw 2.4s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.65}to{opacity:1}}
+header{position:sticky;top:0;z-index:100;background:rgba(13,13,20,.92);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.1rem;border-bottom:1px solid #24243a}
+.logo{font-family:"Bungee",Impact,sans-serif;font-size:1.25rem;text-decoration:none}
+.logo .t{color:var(--neon);text-shadow:0 0 10px var(--neon)}
+.logo .w{color:#fff}
+.live{font-weight:900;font-size:.74rem;letter-spacing:1px;text-transform:uppercase;padding:.38rem .7rem;border-radius:99px;border:1.5px solid var(--mute);color:var(--mute);white-space:nowrap}
+.live.on{border-color:var(--lime);color:var(--lime);box-shadow:0 0 12px rgba(182,255,59,.45)}
+.live.on::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-right:6px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;background:#000 url(images/hero.jpg) center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,20,.35),rgba(13,13,20,.55) 45%,var(--bg) 100%)}
+.hero-in{position:relative;padding:1.5rem 1.2rem 2.2rem;width:100%;max-width:1000px;margin:0 auto}
+.eyebrow{display:inline-block;font-weight:900;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--bg);background:var(--lime);padding:.3rem .6rem;border-radius:3px}
+.hero h1{font-family:"Bungee",Impact,sans-serif;font-weight:400;font-size:clamp(2.6rem,12vw,5.2rem);line-height:.95;margin:.7rem 0 .4rem}
+.hero h1 span{display:block;color:var(--lime);text-shadow:0 0 18px rgba(182,255,59,.6);font-size:.5em;letter-spacing:2px}
+.hero p{font-size:1.08rem;max-width:30rem;color:#dcdae8}
+.bigcall{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1.2rem;background:var(--neon);color:#fff;text-decoration:none;font-family:"Bungee",Impact,sans-serif;font-size:clamp(1.25rem,6vw,1.7rem);padding:.9rem 1rem;border-radius:12px;box-shadow:0 0 0 2px rgba(255,255,255,.12) inset,0 0 26px rgba(255,46,76,.55);max-width:430px}
+.hero .meta{margin-top:.9rem;font-size:.92rem;color:var(--mute)}
+.hero .meta b{color:var(--gold)}
+section{padding:3rem 1.2rem;max-width:1000px;margin:0 auto}
+h2{font-family:"Bungee",Impact,sans-serif;font-weight:400;font-size:clamp(1.6rem,7vw,2.4rem);line-height:1.05;margin-bottom:.3rem}
+.sub{color:var(--mute);margin-bottom:1.3rem}
+.filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-bottom:1.1rem;position:sticky;top:56px;z-index:50;background:var(--bg);padding:8px 0}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:0 0 auto;background:transparent;border:1.5px solid #3a3a55;color:var(--txt);padding:8px 16px;border-radius:99px;font-weight:800;font-size:.9rem;cursor:pointer}
+.filters button.active{border-color:var(--neon);background:var(--neon);color:#fff;box-shadow:0 0 14px rgba(255,46,76,.5)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.9rem}
+.card{background:var(--bg2);border:1px solid #24243a;border-radius:14px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .15s}
+.card:active{transform:scale(.985)}.card.open{border-color:var(--lime)}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
+.tile{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"Bungee",Impact,sans-serif;font-size:1.7rem;line-height:1;padding:1rem;background:radial-gradient(circle at 50% 120%,rgba(255,46,76,.35),transparent 60%),repeating-linear-gradient(45deg,#14141f 0 10px,#181826 10px 20px)}
+.tile small{font-family:system-ui,sans-serif;font-size:.7rem;letter-spacing:3px;color:var(--gold);margin-top:.5rem;font-weight:800}
+.tile.l{color:var(--lime);text-shadow:0 0 16px rgba(182,255,59,.55)}
+.tile.g{color:var(--gold);text-shadow:0 0 16px rgba(255,200,97,.5)}
+.card-body{padding:.85rem 1rem 1rem}
+.row{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline}
+.card h3{font-size:1.05rem}
+.price{color:var(--lime);font-weight:900;white-space:nowrap}
+.d{color:var(--mute);font-size:.9rem;margin-top:.2rem}
+.more{display:none;margin-top:.6rem;padding-top:.6rem;border-top:1px dashed #33334d;font-size:.88rem;color:#cfcde0}
+.card.open .more{display:block}
+.tap{font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:#6d6b85;margin-top:.45rem;font-weight:800}.card.open .tap{display:none}
+.pick{display:inline-block;font-size:.66rem;letter-spacing:1.5px;font-weight:900;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:.15rem .45rem;border-radius:3px;margin-bottom:.35rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block}
+.gallery .big{grid-column:span 2;aspect-ratio:16/10}
+.gallery .tile{aspect-ratio:1;height:auto;border-radius:12px}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.box{background:var(--bg2);border:1px solid #24243a;border-radius:14px;padding:1.3rem}
+.box h3{font-family:"Bungee",Impact,sans-serif;font-weight:400;color:var(--gold);font-size:1.15rem;margin-bottom:.6rem}
+.box table{width:100%;border-collapse:collapse}.box td{padding:.32rem 0;border-bottom:1px solid #22223a}.box td:last-child{text-align:right}
+.box tr.today td{color:var(--lime);font-weight:900}
+.confirm{margin-top:.8rem;font-size:.88rem;color:var(--gold)}
+#status{display:block;margin-top:.7rem;font-weight:900}
+.btn{display:inline-block;margin-top:.9rem;padding:.8rem 1.1rem;border-radius:10px;font-weight:900;text-decoration:none}
+.btn.n{background:var(--neon);color:#fff}.btn.o{border:1.5px solid var(--lime);color:var(--lime)}
+.phone{font-family:"Bungee",Impact,sans-serif;font-size:1.5rem;color:#fff;text-decoration:none;display:block;margin:.2rem 0}
+.call-bar{position:fixed;left:0;right:0;bottom:0;z-index:200;padding:.6rem .7rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(13,13,20,.95);border-top:1px solid #2a2a44;display:flex;gap:.5rem}
+.call-bar a{flex:1;text-align:center;text-decoration:none;font-weight:900;border-radius:10px;padding:.85rem .4rem;font-size:1.02rem}
+.call-bar .c{flex:2.2;background:var(--neon);color:#fff;box-shadow:0 0 18px rgba(255,46,76,.5)}
+.call-bar .m{border:1.5px solid var(--lime);color:var(--lime)}
+footer{text-align:center;color:var(--mute);font-size:.86rem;padding:2rem 1rem;border-top:1px solid #1f1f33}
+footer .bung{font-size:1.3rem}
+@media(min-width:760px){.gallery{grid-template-columns:repeat(4,1fr)}.gallery .big{grid-column:span 2;aspect-ratio:auto}}
+@media(max-width:680px){.info{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.lights,.live.on::before{animation:none}}
+.call-bar a{white-space:nowrap}.call-bar .c{flex:1 1 auto!important}.call-bar .m{flex:0 0 auto!important;padding-left:1.1rem;padding-right:1.1rem}
+@media(max-width:360px){.call-bar a{font-size:.9rem}}
+</style>
+</head>
+<body>
+<div class="lights" aria-hidden="true"></div>
+<header>
+  <a class="logo" href="#top"><span class="w">EL </span><span class="t">TACOTORRO</span></a>
+  <span class="live" id="live">…</span>
+</header>
+
+<div class="hero" id="top" role="img" aria-label="Street tacos from El TaCotorro">
+  <div class="hero-in">
+    <span class="eyebrow">Late-night tacos • Beach Blvd</span>
+    <h1 class="glow">El TaCotorro<span>Tacos • Birria • Tortas</span></h1>
+    <p>Asada, pastor, birria with consomé and carne asada fries, served late on Beach Blvd.</p>
+    <a class="bigcall" href="tel:9045544146">📞 (904) 554-4146</a>
+    <p class="meta" id="heroStatus">Most nights from <b>8 PM</b> • Call to confirm hours</p>
+  </div>
+</div>
+
+<section id="menu">
+  <h2>El Menú</h2>
+  <p class="sub">Tap any item for details. Prices may change; call to confirm.</p>
+  <div class="filters">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="tacos">Tacos</button>
+    <button data-filter="birria">Birria</button>
+    <button data-filter="big">Burritos &amp; More</button>
+    <button data-filter="drinks">Drinks</button>
+  </div>
+  <div class="grid" id="menu-grid">
+    <div class="card" data-cat="tacos"><img src="images/tacos2.jpg" alt="El TaCotorro street tacos with lime and cucumber" loading="lazy">
+      <div class="card-body"><span class="pick">The classics</span><div class="row"><h3>Street Tacos</h3><span class="price">$3.25 – $3.75</span></div><p class="d">Asada, pastor, pollo, carnitas or chorizo.</p>
+      <div class="more">Mix and match. Ask for your toppings and salsa when you order.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="tacos"><div class="tile l">LENGUA<br>&amp; TRIPA<small>TACOS</small></div>
+      <div class="card-body"><div class="row"><h3>Lengua &amp; Tripa</h3><span class="price">$4.25</span></div><p class="d">For the taco regulars who know.</p>
+      <div class="more">Lengua (beef tongue) or tripa (tripe), each $4.25.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="tacos"><div class="tile g">FISH<br>&amp; SHRIMP<small>TACOS</small></div>
+      <div class="card-body"><div class="row"><h3>Fish &amp; Shrimp Tacos</h3><span class="price">$4 – $4.50</span></div><p class="d">Seafood tacos off the same late-night menu.</p>
+      <div class="more">Call (904) 554-4146 to check what's available tonight.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="birria"><div class="tile">BIRRIA<small>+ CONSOMÉ</small></div>
+      <div class="card-body"><span class="pick">Fan favorite</span><div class="row"><h3>Birria Tacos</h3><span class="price">3 for $12 – $14.50</span></div><p class="d">Three birria tacos with consomé for dipping.</p>
+      <div class="more">Dip, sip, repeat. Order ahead on busy nights.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="big"><div class="tile l">CARNE<br>ASADA<small>FRIES</small></div>
+      <div class="card-body"><div class="row"><h3>Carne Asada Fries</h3><span class="price">$11.99</span></div><p class="d">Fries loaded with carne asada.</p>
+      <div class="more">Big enough to share. Or not.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="big"><div class="tile g">BURRITO<br>GIGANTE</div>
+      <div class="card-body"><div class="row"><h3>Burrito Gigante</h3><span class="price">Call for price</span></div><p class="d">The big one, with your choice of meat.</p>
+      <div class="more">Ask about meat options when you call.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="big"><div class="tile">QUESADILLA<small>GRANDE</small></div>
+      <div class="card-body"><div class="row"><h3>Quesadilla Grande</h3><span class="price">Call for price</span></div><p class="d">Big, cheesy and grilled.</p>
+      <div class="more">Add your favorite meat.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="big"><div class="tile l">TORTAS<small>&amp; NACHOS</small></div>
+      <div class="card-body"><div class="row"><h3>Tortas &amp; Nachos</h3><span class="price">Call for price</span></div><p class="d">Mexican sandwiches and loaded nachos.</p>
+      <div class="more">Call (904) 554-4146 for tonight's prices.</div><p class="tap">Tap for details</p></div></div>
+    <div class="card" data-cat="drinks"><div class="tile g">AGUAS<small>& JARRITOS</small></div>
+      <div class="card-body"><div class="row"><h3>Drinks</h3><span class="price">Ask</span></div><p class="d">Horchata, jamaica, Jarritos and Mexican Coke.</p>
+      <div class="more">The right way to wash down a birria.</div><p class="tap">Tap for details</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Real Tacos. Real Late.</h2>
+  <p class="sub">Photos of El TaCotorro from public listings.</p>
+  <div class="gallery">
+    <img class="big" src="images/storefront.jpg" alt="El TaCotorro sign: Tacos, Tortas, Caldos, Agua Fresca" loading="lazy" style="object-position:center 40%">
+    <img src="images/tacos2.jpg" alt="Plate of El TaCotorro tacos" loading="lazy">
+    <img src="images/hero.jpg" alt="El TaCotorro tacos" loading="lazy">
+  </div>
+</section>
+
+<section id="visit">
+  <h2>Find the Tacos</h2>
+  <p class="sub">Hours and location can change. Call before you head out.</p>
+  <div class="info">
+    <div class="box"><h3>Hours</h3>
+      <table id="hours">
+        <tr data-d="3"><td>Wednesday</td><td>8 PM – 12 AM</td></tr>
+        <tr data-d="4"><td>Thursday</td><td>8 PM – 12 AM</td></tr>
+        <tr data-d="5"><td>Friday</td><td>9 PM – 1 AM</td></tr>
+        <tr data-d="6"><td>Saturday</td><td>8 PM – 1 AM</td></tr>
+        <tr data-d="0"><td>Sunday</td><td>8 PM – 12 AM</td></tr>
+        <tr data-d="1"><td>Monday</td><td>Closed</td></tr>
+        <tr data-d="2"><td>Tuesday</td><td>Closed</td></tr>
+      </table>
+      <span id="status"></span>
+      <p class="confirm">⚠ Call to confirm hours: (904) 554-4146</p>
+    </div>
+    <div class="box"><h3>Location</h3>
+      9827 Beach Blvd<br>Jacksonville, FL 32246<br>
+      <a class="btn o" href="https://www.google.com/maps/search/?api=1&query=El+TaCotorro+9827+Beach+Blvd+Jacksonville+FL+32246" target="_blank" rel="noopener">📍 Get Directions</a>
+      <h3 style="margin-top:1.4rem">Call or Order Ahead</h3>
+      <a class="phone" href="tel:9045544146">(904) 554-4146</a>
+      <a class="btn n" href="tel:9045544146">📞 Call Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="bung glow">El TaCotorro</p>
+  <p style="margin-top:.5rem">9827 Beach Blvd, Jacksonville, FL 32246 • (904) 554-4146</p>
+  <p style="margin-top:.6rem;color:var(--txt)">Mock site for demonstration • Not the official website</p>
+  <p style="margin-top:.4rem;font-size:.76rem">Photos: real photos of El TaCotorro from public listings. See SOURCES.md.</p>
+</footer>
+
+<div class="call-bar"><a class="c" href="tel:9045544146">📞 Call Now • (904) 554-4146</a><a class="m" href="#menu">Menu</a></div>
+
+<script>
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+document.querySelectorAll('.filters button').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  const f=btn.dataset.filter;document.querySelectorAll('#menu-grid .card').forEach(c=>c.style.display=(f==='all'||c.dataset.cat===f)?'':'none');}));
+// Open-now status, America/New_York. Hours may run past midnight (end > 24).
+(function(){const H={0:[20,24],1:null,2:null,3:[20,24],4:[20,24],5:[21,25],6:[20,25]};
+ const N=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+ const fmt=x=>{x=x%24;const hr=Math.floor(x),ap=hr>=12?'PM':'AM';return ((hr%12)||12)+' '+ap};
+ const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));const d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+ const row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+ let open=null;const r=H[d],y=H[(d+6)%7];
+ if(r&&h>=r[0]&&h<r[1])open=r[1];else if(y&&y[1]>24&&h<y[1]-24)open=y[1];
+ const s=document.getElementById('status'),L=document.getElementById('live'),hs=document.getElementById('heroStatus');
+ if(open){s.textContent='● Open now until '+fmt(open);s.style.color='#b6ff3b';L.textContent='Open now';L.classList.add('on');
+   hs.innerHTML='<b style="color:#b6ff3b">● Open now</b> until '+fmt(open)+' • Call to confirm hours';}
+ else{let t='';for(let i=0;i<8;i++){const k=(d+i)%7;if(H[k]&&(i>0||h<H[k][0])){t=(i===0?'tonight':i===1?'tomorrow':N[k])+' at '+fmt(H[k][0]);break}}
+   s.textContent='● Closed now • Opens '+t;s.style.color='#ff2e4c';L.textContent='Opens '+(t.startsWith('tonight')?t.replace('tonight at ',''):t.split(' at ')[0].slice(0,3));
+   hs.innerHTML='Closed now • Opens <b>'+t+'</b> • Call to confirm hours';}})();
+</script>
+</body>
+</html>
